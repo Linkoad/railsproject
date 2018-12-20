@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_12_10_183720) do
 
   create_table "shouts", force: :cascade do |t|
-    t.string "body"
+    t.string "body", null: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

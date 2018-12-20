@@ -1,14 +1,8 @@
 <h1>Dashboard</h1>
 
 <%= form_for @shout do |form| %>
-	<%= form.text_field :body, placeholder: "shout here!", required: true %>
-	<%= form.submit "Shout!" %>
+    <%= form.text_field :body, placeholder: "Shout here!", require: true %>
+    <%= form.submit "Shout"%>
 <% end %>
 
-		<% @shouts.each do |shout| %>
-			<div>
-				<%= shout.user.username %>
-				<%= shout.body %>
-				<%= time_ago_in_words(shout.created_at) %> ago
-			</div>
-		<% end %>
+	<%= render @shouts %>
