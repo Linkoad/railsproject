@@ -1,3 +1,3 @@
 class TextShout < ApplicationRecord
-	validades :body, presence: true, lenght: { in: 1..144 }
+	validates :body, presence: true, length: { in: 1..144 }	
 end
