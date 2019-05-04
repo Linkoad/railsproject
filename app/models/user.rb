@@ -10,12 +10,17 @@ class User < ApplicationRecord
   def like(shout)
 	  liked_shouts << shout
   end
-
+  
   def unlike(shout)
 	  liked_shouts.destroy(shout)
   end
-  
+
   def liked?(shout)
 	  liked_shout_ids.include?(shout.id)
   end
+
+  def to_param
+	  username
+  end
 end
+
