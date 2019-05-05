@@ -29,7 +29,7 @@ class ShoutsController < ApplicationController
 		params.require(:shout).require(:content).permit(:image)
 	end
 
-	def redirect_options_for (shout)
+	def redirect_options_for(shout)
 		if shout.persisted?
 			{ notice: "Shouted successfully" }
 		else
