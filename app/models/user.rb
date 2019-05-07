@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   include Clearance::User
 
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: { case_sensitive: false }
   
   has_many :shouts, dependent: :destroy
   has_many :likes
