@@ -1,0 +1,2 @@
+class CreateFollowingRelationship < ApplicationRecord
+end
