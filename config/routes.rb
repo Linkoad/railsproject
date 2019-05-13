@@ -7,12 +7,14 @@ Rails.application.routes.draw do
 	post "text_shouts" => "shouts#create", defaults: { content_type: TextShout }
 	post "photo_shouts" => "shouts#create", defaults: { content_type: PhotoShout }
 	
-	resources :shouts, only: [:create, :show] do
+	resources :shouts, only: [:show] do
 		member do
 			post "like" => "likes#create"
 			delete "unlike" => "likes#destroy"
 		end
 	end
+	
+	resources :hashtags, only: [:show]
 
 	resources :passwords, controller: "clearance/passwords", only: [:create, :new]
 	resource :session, only: [:create]
